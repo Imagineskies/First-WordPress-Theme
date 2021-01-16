@@ -1,1 +1,0 @@
-This is my first attempt at a Wordpress Theme I made in 2019. Looking back at it there is a lot I would change and add, but I decited to at least save it. This way I have somthing to look at when I want to compare my progress. That and it's funny to look at old mistakes.
