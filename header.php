@@ -29,6 +29,12 @@
       h1, h2, h3, h4, h5, h6 {
         color: <?php echo get_theme_mod( 'pulcherrimum-headercolor' );  ?> !important;
       }
+
+      header.masthead {
+        background-image: url(<?php header_image(); ?>);
+        background-position: center center;
+        background-size: cover;
+      }
     </style>
     <title><?php bloginfo('name'); ?></title>
     <?php wp_head(); ?>
@@ -97,42 +103,66 @@
       </div> <!-- / .container -->
     </nav>
 
+    <header class="masthead">
+      <div class="container">
+        <div class="row d-flex align-items-center">
+          <div class="textbox d-flex justify-content-center">
+            <?php if ( is_front_page() ) : ?><!-- Home -->
 
-    <div id="mainSideMenuM">
-      <div id="mainSideContentM">
-        <span class="navbar-brand">
-          <?php
-            // check to see if the logo exists and add it to the page
-            if ( get_theme_mod( 'your_theme_logo' ) ) : ?>
+              <div class="col-lg-10 mx-auto">
+                <?php
+                  $post_id = 52;
+                  $queried_post = get_post($post_id);
+                ?>
+                <?php echo $queried_post->post_content; ?>
+              </div>
 
-            <img src="<?php echo get_theme_mod( 'your_theme_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" >
+            <?php elseif ( $post->ID == 7 ) : ?> <!-- About -->
 
-            <?php // add a fallback if the logo doesn't exist
-            else : ?>
+              <div class="col-lg-10 mx-auto">
+                <?php
+                  $post_id = 57;
+                  $queried_post = get_post($post_id);
+                ?>
+                <?php echo $queried_post->post_content; ?>
+              </div>
 
-            <?php bloginfo( 'name' ); ?>
+            <?php elseif ( $post->ID == 64 ) : ?><!-- Poems -->
 
-          <?php endif; ?>
-        </span>
-        <div class="btn" onclick="exitSideMenu()">
-          &otimes;
+              <div class="col-lg-10 mx-auto">
+                <?php
+                  $post_id = 60;
+                  $queried_post = get_post($post_id);
+                ?>
+                <?php echo $queried_post->post_content; ?>
+              </div>
+
+            <?php elseif ( $post->ID == 8 ) : ?><!-- Music -->
+
+              <div class="col-lg-10 mx-auto">
+                <?php
+                  $post_id = 66;
+                  $queried_post = get_post($post_id);
+                ?>
+                <?php echo $queried_post->post_content; ?>
+              </div>
+
+            <?php elseif ( $post->ID == 9 ) : ?><!-- Sandbox -->
+
+              <div class="col-lg-10 mx-auto">
+                <?php
+                  $post_id = 68;
+                  $queried_post = get_post($post_id);
+                ?>
+                <?php echo $queried_post->post_content; ?>
+              </div>
+
+            <?php else : ?>
+            <?php endif; ?>
+          </div>
         </div>
-
-        <ul class="nav flex-column">
-          <?php bootstrap_nav(); ?>
-        </ul>
-
       </div>
-    </div>
-
-
-    <?php if ( get_header_image() ) : ?>
-      <div id="site-header">
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-          <img src="<?php header_image(); ?>" width="<?php echo absint( get_custom_header()->width ); ?>" height="<?php echo absint( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-        </a>
-      </div>
-    <?php endif; ?>
+    </header>
 
 
       <div class="site-content-contain">
