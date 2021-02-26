@@ -1,6 +1,6 @@
 <?php
 /**
- * Pulcherrimum: Archive
+ * Pulcherrimum: Category
  *
  * @package WordPress
  * @subpackage Pulcherrimum
