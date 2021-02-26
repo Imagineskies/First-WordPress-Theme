@@ -168,29 +168,4 @@ add_theme_support( 'wp-block-styles' );
 add_theme_support( 'responsive-embeds' );
 
 add_theme_support('custom-header');
-  // Custom Header
-  function pulcherrimum_custom_header_setup() {
-    $header_image = array(
-    // Default Header Image to display
-    'default-image'           => get_template_directory_uri() . '/assets/img/background.jpg',
-    // Display the header text along with the image
-    'header-text'             => false,
-    // Header text color default
-    'default-text-color'      => '000',
-    // Header image width (in pixels)
-    'width'                   => 1920,
-    // Header image flex width
-    'flex-width'              => true,
-    // Header image height (in pixels)
-    'height'                  => 1080,
-    // Header image flex height
-    'flex-height'              => true,
-    // Header image random rotation default
-    'random-default'          => false,
-    // Enable upload of image file in admin
-    'uploads'                 => false,
-    );
-    add_theme_support( 'custom-header', $header_image );
-  }
-  add_action( 'after_setup_theme', 'pulcherrimum_custom_header_setup' );
  ?>
