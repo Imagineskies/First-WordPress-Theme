@@ -11,32 +11,18 @@ get_header(); ?>
 <div id="primary" class="content-area">
   <main id="main" class="site-main" role="main">
 
-    <div class="container sunset-posts-container">
-		<div class="row">
-			<div class="col-lg-2 mr-auto">
-				<?php the_archive_title('<h4>', '</h4>'); ?>
-			</div>
-			<div class="col-lg-8 ml-auto">
-				 <?php
+   <section id="category">
+     <div class="container">
+       <div class="row d-flex align-items-center">
+         <div class="col-lg-10 mx-auto d-flex justify-content-center">
+           <h2><?php single_cat_title('Currently Browsing '); ?></h2>
 
-					if ( have_posts() ) :
+           
 
-					   while ( have_posts() ) : the_post();
-
-					   get_template_part( 'template-parts/content', get_post_format() );
-
-					 endwhile;
-
-				   endif;
-
-				   get_template_part( 'nav', 'below' );
-
-				  ?>
-			</div>
-		</div>
-
-    </div><!-- .container -->
-
+         </div>
+       </div>
+     </div>
+   </section><!-- #category -->
 
   </main>
 </div><!-- #primary -->
